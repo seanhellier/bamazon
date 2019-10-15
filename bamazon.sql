@@ -36,9 +36,9 @@ CREATE TABLE products
 		("sphegetti", "food", 1.95, 10),
 		("ribeye", "meat", 8.95, 100),
 		("dog food", "food", 2.95, 100),
-		("ribeye", "meat", 8.95, 100),
-		("ribeye", "meat", 8.95, 100),
-		("ribeye", "meat", 8.95, 100);
+		("tuna", "meat", 1.95, 100),
+		("tomato soup", "meat", 8.95, 100),
+		("chicken", "meat", 8.95, 100);
 
 	SELECT *
 	FROM products;

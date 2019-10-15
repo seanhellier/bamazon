@@ -10,11 +10,13 @@ CREATE TABLE products
 
 	item VARCHAR
 	(50) NOT NULL,
+
 	department VARCHAR
 	(50) NOT NULL,
 
 	price DECIMAL
 	(10, 2) NOT NULL,
+	
 	quantity INTEGER
 	(100) NOT NULL,
 
@@ -36,9 +38,9 @@ CREATE TABLE products
 		("sphegetti", "food", 1.95, 10),
 		("ribeye", "meat", 8.95, 100),
 		("dog food", "food", 2.95, 100),
-		("ribeye", "meat", 8.95, 100),
-		("ribeye", "meat", 8.95, 100),
-		("ribeye", "meat", 8.95, 100);
+		("tuna", "meat", 1.95, 100),
+		("tomato soup", "meat", 8.95, 100),
+		("chicken", "meat", 8.95, 3);
 
 	SELECT *
 	FROM products;
