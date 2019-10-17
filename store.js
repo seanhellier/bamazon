@@ -1,12 +1,13 @@
 var inquirer = require('inquirer');
 var mysql = require('mysql');
 var colors = require('colors');
+require('dotenv').config();
 
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
 	database: 'bamazon_db',
-	password: '70-Mousey_05'
+	password: process.env.DB_ADMIN_PASSWORD
 });
 
 connection.connect(function(err) {
@@ -62,9 +63,18 @@ connection.query('SELECT * FROM products', function(error, results, fields) {
 				connection.end();
 			} else {
 				var resultQuantity = theItem.quantity - ans.quantity;
+				var resultPrice = ans.quantity * theItem.price;
 				if (resultQuantity >= 0) {
 					updateStock(ans.item_id, resultQuantity);
-					console.log('You bought ' + ans.quantity + ' of ' + theItem.item);
+					console.log(
+						'You bought ' +
+							ans.quantity +
+							' ' +
+							theItem.item +
+							' your total is ' +
+							'$' +
+							resultPrice.toFixed(2)
+					);
 				} else {
 					console.log('Insufficient Quantity');
 					connection.end();
