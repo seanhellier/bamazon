@@ -100,3 +100,5 @@ function updateStock(id, newQuantity) {
 	});
 	connection.end();
 }
+
+// msallam@bootcampspot.com
